@@ -18,7 +18,7 @@ This is a Streamlit-based web application that demonstrates the process of model
 ## Installation Instructions:
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/Model-Training.git
+   git clone https://github.com/Aryan9595/Model-Training.git
    ```
 
 2. Install the required dependencies:
