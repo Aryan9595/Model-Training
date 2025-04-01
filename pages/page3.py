@@ -1,25 +1,13 @@
 import streamlit as st
-import matplotlib.pyplot as plt
-import numpy as np
 
-st.title("Page 3: Model Interpretation")
-
-# Sample explanation of model interpretation
-st.write("""
-    On this page, we will interpret the results of the model.
-    We'll use techniques such as feature importance and SHAP values to explain how the model makes predictions.
-""")
-
-# Example: Feature importance visualization (assuming a trained model with feature importances)
-# Replace with actual model and feature names in your case
-feature_names = ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4']
-importances = np.random.rand(4)  # Dummy feature importances; replace with actual data
-
-# Plot feature importances
-fig, ax = plt.subplots()
-ax.barh(feature_names, importances)
-ax.set_xlabel('Importance')
-ax.set_title('Feature Importance')
-st.pyplot(fig)
-
-# If you have a trained model and can explain individual predictions, you can also add SHAP or LIME-based explanations.
+def display():
+    st.title("Live Predictions")
+    st.write("This is the live prediction page where you can make predictions using the trained model.")
+    
+    # Add user input here for making live predictions
+    user_input = st.text_input("Enter your input data:")
+    
+    if st.button('Predict'):
+        st.write(f"Making prediction for the input: {user_input}")
+        # Here you would use your trained model to make a prediction
+        st.write("Prediction result: 0.85 (dummy value)")  # Replace with actual prediction logic
