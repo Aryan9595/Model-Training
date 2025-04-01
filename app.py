@@ -1,15 +1,18 @@
 import streamlit as st
+from pages import page1, page2, page3, page4
 
-# Sidebar for navigation
-st.sidebar.title("Model Explainer App")
-page = st.sidebar.radio("Choose a page", ["Page 1", "Page 2", "Page 3", "Page 4"])
+PAGES = {
+    "Model Training": page1,
+    "Explainability": page2,
+    "Live Predictions": page3,
+    "SHAP Values": page4,
+}
 
-# Page rendering based on the selected option
-if page == "Page 1":
-    import pages.page1
-elif page == "Page 2":
-    import pages.page2
-elif page == "Page 3":
-    import pages.page3
-elif page == "Page 4":
-    import pages.page4
+def app():
+    st.sidebar.title('Navigation')
+    selection = st.sidebar.radio("Go to", list(PAGES.keys()))  # Sidebar navigation
+    page = PAGES[selection]  # Get the selected page
+    page.display()  # Display the selected page
+
+if __name__ == "__main__":
+    app()
